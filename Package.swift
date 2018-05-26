@@ -14,6 +14,5 @@ let package = Package(
         .target(
             name: "Csdjournal",
             dependencies: []),
-    ],
-    pkgConfig: "libsystemd"
+    ]
 )
