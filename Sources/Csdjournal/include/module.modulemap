@@ -1,0 +1,4 @@
+module Csdjournal [system] {
+  header "sdjournal_wrapper.h"
+  export *
+}
