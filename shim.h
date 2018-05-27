@@ -1,17 +1,20 @@
 #include <systemd/sd-journal.h>
 #include <stdio.h>
+#include <string.h>
 
 extern inline
 int csd_journal_print(int priority, const char *file, const char *line, const char *func, const char *message) {
+	char fileStr[60];
+	char lineStr[60];
+	strcpy (fileStr,"CODE_FILE=");
+	strncat (fileStr, file, 20);
+
+	strcpy (lineStr,"CODE_LINE=");
+	strncat (lineStr, line, 20);
+
 	printf("I'm sending %s to the system log, from %s, at %s : %s\n", message, file, func, line);
     	
-    int i = 0;
-    int res = 0;
-
-    for(i = 0; i < 30; i++) {
-    	res = sd_journal_print_with_location(i, file, line, func, message);
-    	printf("Got %i out of the system call!\n", res);
-    }
+    int res = sd_journal_print_with_location(i, fileStr, lineStr, func, message);
 
 	printf("Log has been sent!\n");
 
