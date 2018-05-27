@@ -14,7 +14,7 @@ int csd_journal_print(int priority, const char *file, const char *line, const ch
 
 	printf("I'm sending %s to the system log, from %s, at %s : %s\n", message, file, func, line);
     	
-    int res = sd_journal_print_with_location(i, fileStr, lineStr, func, message);
+    int res = sd_journal_print_with_location(priority, fileStr, lineStr, func, message);
 
 	printf("Log has been sent!\n");
 
