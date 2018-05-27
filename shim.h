@@ -6,7 +6,7 @@ int csd_journal_print(int priority, const char *file, const char *line, const ch
 	printf("I'm sending %s to the system log, from %s, at %s : %s\n", message, file, func, line);
     	
     int i = 0;
-    int res;
+    int res = 0;
 
     for(i = 0; i < 30; i++) {
     	res = sd_journal_print_with_location(i, file, line, func, message);
