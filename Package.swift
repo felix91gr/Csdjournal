@@ -4,6 +4,20 @@
 import PackageDescription
 
 let package = Package(
-    name: "Csdjournal",
-    pkgConfig: "libsystemd"
-    )
+    name: "CSDJournal",
+    
+    providers: [
+    	.apt(["libsystemd-dev"])
+    ],
+    
+    products: [
+    	.library(
+    		name: "CSDJournal",
+    		targets: ["CSDJournal"]
+    	)
+    ],
+    
+    targets: [
+    	.target(name: "CSDJournal")
+    ]
+)
