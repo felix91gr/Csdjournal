@@ -1,5 +1,5 @@
 module Csdjournal [system] {
   header "csd_journal.h"
-  link "csd_journal"
+  link "sd_journal"
   export *
 }
