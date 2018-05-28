@@ -1,3 +1,6 @@
+#ifndef SDJournalHelpers_h
+#define SDJournalHelpers_h
+
 #include <systemd/sd-journal.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -21,10 +24,12 @@ int csd_journal_print(int priority, const char *file, const char *line, const ch
 	strcpy (lineStr, prefixLine);
 	strcat (lineStr, line);
 
-    int res = sd_journal_print_with_location(priority, fileStr, lineStr, func, message);
+	int res = sd_journal_print_with_location(priority, fileStr, lineStr, func, message);
 
-    free (fileStr);
-    free (lineStr);
+	free (fileStr);
+	free (lineStr);
 
 	return res;
 }
+
+#endif /* SDJournalHelpers_h */
