@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 
-inline int csd_journal_print(int priority, const char *file, const char *line, const char *func, const char *message) {
+extern inline int csd_journal_print(int priority, const char *file, const char *line, const char *func, const char *message) {
 	int lenFileStr = strlen(file);
 	int lenLineStr = strlen(line);
 
