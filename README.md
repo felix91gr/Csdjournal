@@ -1,3 +1,3 @@
-# csd_journal
+# CSDJournal
 
-A description of this package.
+A Swift Package Manager system module for importing the systemd library and sd_journal.h into Swift.

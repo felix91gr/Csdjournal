@@ -1,5 +1,5 @@
 module CSDJournal [system] {
-  header "shim.h"
+  header "sd-journal.h"
   link "systemd"
   export *
 }
